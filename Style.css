@@ -75,18 +75,6 @@ button:hover {
     background-color: #ff8a8a;
 }
 
-/* Responsividade */
-@media (min-width: 768px) {
-    #temas, #pacotes {
-        display: flex;
-        justify-content: center;
-    }
-
-    #temas .tema, #pacotes .pacote {
-        max-width: 150px;
-        margin: 150px;
-    }
-}
 max-height /* Controle de tamanho das imagens na galeria */
 #temas img, #pacotes img {
     max-width: 100%;     /* Garante que a imagem não ultrapasse o tamanho do container */
@@ -95,13 +83,17 @@ max-height /* Controle de tamanho das imagens na galeria */
     border-radius: 50px; /* Bordas arredondadas */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
 }
-@media (min-width: 768px) {
-    #temas .tema, #pacotes .pacote {
-        max-width: 300px; /* Define o tamanho do bloco em telas maiores */
-    }
 
+#temas img, #pacotes img {
+    max-width: 100%;
+    height: 150px; /* Altura fixa para manter a proporção */
+    object-fit: cover; /* Preenche o container mantendo a proporção */
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
     #temas img, #pacotes img {
-        max-width: 100%;
-        max-height: 250px; /* Limita a altura para telas maiores */
+        height: 250px; /* Ajuste a altura para telas maiores */
     }
 }
